@@ -1,0 +1,133 @@
+/* Body Styling */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(to bottom right, #87CEEB, #f0f8ff);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: #333;
+}
+
+/* Container Styling */
+.container {
+    text-align: center;
+    background: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Add animation for smoother effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Input Styling */
+input {
+    padding: 12px 15px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+/* Button Styling */
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Weather Display Section */
+#weatherDisplay {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#weatherDisplay table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#weatherDisplay th, #weatherDisplay td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+#weatherDisplay th {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+}
+
+#weatherDisplay td {
+    background-color: #f9f9f9;
+}
+
+/* Forecast Section */
+.forecast {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    gap: 15px;
+}
+
+.forecast-item {
+    text-align: center;
+    background: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-item img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Footer Section */
+footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}

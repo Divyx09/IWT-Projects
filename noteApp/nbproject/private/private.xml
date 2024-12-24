@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Nishu/Documents/NetBeansProjects/noteApp/web/download_note.jsp</file>
+            <file>file:/C:/Users/Nishu/Documents/NetBeansProjects/noteApp/web/new_note.jsp</file>
+            <file>file:/C:/Users/Nishu/Documents/NetBeansProjects/noteApp/web/note_detail.jsp</file>
+            <file>file:/C:/Users/Nishu/Documents/NetBeansProjects/noteApp/src/java/DeleteNoteServlet.java</file>
+            <file>file:/C:/Users/Nishu/Documents/NetBeansProjects/noteApp/web/login.jsp</file>
+            <file>file:/C:/Users/Nishu/Documents/NetBeansProjects/noteApp/web/edit_note.jsp</file>
+            <file>file:/C:/Users/Nishu/Documents/NetBeansProjects/noteApp/src/java/RegisterServlet.java</file>
+            <file>file:/C:/Users/Nishu/Documents/NetBeansProjects/noteApp/web/register.jsp</file>
+            <file>file:/C:/Users/Nishu/Documents/NetBeansProjects/noteApp/src/java/DatabaseConnection.java</file>
+            <file>file:/C:/Users/Nishu/Documents/NetBeansProjects/noteApp/web/notes.jsp</file>
+            <file>file:/C:/Users/Nishu/Documents/NetBeansProjects/noteApp/src/java/NoteServlet.java</file>
+            <file>file:/C:/Users/Nishu/Documents/NetBeansProjects/noteApp/src/java/LoginServlet.java</file>
+            <file>file:/C:/Users/Nishu/Documents/NetBeansProjects/noteApp/web/index.jsp</file>
+        </group>
+    </open-files>
+</project-private>

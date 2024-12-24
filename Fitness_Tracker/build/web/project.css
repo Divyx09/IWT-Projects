@@ -1,0 +1,170 @@
+body {
+    background-image: url('Student.png'); /* Replace with the actual image path */
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#mymenu {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: right;
+    padding: 10px 0;
+}
+
+#mymenu ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#mymenu ul li {
+    display: inline-block;
+    padding: 15px;
+}
+
+#mymenu ul li:hover {
+    background: white;
+    color: black;
+}
+
+#mydata {
+    padding-top: 100px;
+}
+
+table {
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    box-shadow: 15px 15px 15px white;
+}
+
+.A {
+    height: 40px;
+    width: 300px;
+}
+
+.B {
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.B:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: black;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#stopwatch {
+    font-size: 48px;
+    margin: 20px 0;
+    color: #222;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.common-workouts {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.common-workouts span {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.common-workouts span:hover {
+    background-color: #e2e6ea;
+    border-color: #adb5bd;
+}
+
+#history-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#history-list li {
+    background-color: #f8f9fa;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.logout {
+    margin-top: 20px;
+    background-color: #dc3545;
+    color: white;
+    padding: 10px;
+    border: none;
+}
+
+.logout:hover {
+    background-color: #c82333;
+}
+
+.stopwatch {
+    font-size: 32px;
+    margin: 20px 0;
+}
+
+.history ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.history ul li {
+    background: #f9f9f9;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

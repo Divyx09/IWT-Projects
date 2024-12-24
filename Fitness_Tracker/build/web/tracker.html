@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Tracker</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Workout Tracker</h1>
+        <div id="welcome-message">Loading...</div>
+        <div id="stopwatch">00:00:00</div>
+
+        <button id="start-stop" onclick="startStopwatch()">Start</button>
+        <button onclick="stopStopwatch()">Stop</button>
+        <button onclick="resetStopwatch()">Reset</button>
+
+        <form action="SaveWorkout" method="POST">
+            <div>
+                <input type="hidden" id="username" name="username" value="example_user" /> <!-- Replace with dynamic username -->
+                <input type="text" id="workout-name" name="workoutName" placeholder="Enter workout name" required />
+                <input type="hidden" id="workout-duration" name="duration" value="00:00:00" />
+                <button type="submit" onclick="updateDuration()">Save Workout</button>
+            </div>
+        </form>
+
+        <div class="common-workouts">
+            <span onclick="selectWorkout('Running')">Running</span>
+            <span onclick="selectWorkout('Walking')">Walking</span>
+            <span onclick="selectWorkout('Cycling')">Cycling</span>
+            <span onclick="selectWorkout('Yoga')">Yoga</span>
+            <span onclick="selectWorkout('Swimming')">Swimming</span>
+        </div>
+
+        <h3>Workout History</h3>
+        <ul id="history-list">
+            <li>Running - 00:45:00</li>
+            <li>Walking - 01:20:00</li>
+        </ul>
+
+        <button class="logout" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        let timer, seconds = 0;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('SessionCheck') 
+                .then(response => {
+                    if (!response.ok) throw new Error('No active session');
+                    return response.text();
+                })
+                .then(username => {
+                    document.getElementById('welcome-message').innerText = `Welcome, ${username}!`;
+                    document.getElementById('username').value = username; // Set username dynamically
+                    loadHistory(username);
+                })
+                .catch(() => {
+                    alert("No user is logged in. Redirecting to login page.");
+                    window.location.href = "login.html";
+                });
+        });
+
+        function startStopwatch() {
+            if (!timer) {
+                timer = setInterval(updateTime, 1000);
+                document.getElementById('start-stop').innerText = 'Pause';
+                document.getElementById('start-stop').setAttribute('onclick', 'pauseStopwatch()');
+            }
+        }
+
+        function pauseStopwatch() {
+            stopStopwatch();
+            document.getElementById('start-stop').innerText = 'Resume';
+            document.getElementById('start-stop').setAttribute('onclick', 'startStopwatch()');
+        }
+
+        function stopStopwatch() {
+            clearInterval(timer);
+            timer = null;
+        }
+
+        function resetStopwatch() {
+            stopStopwatch();
+            seconds = 0;
+            document.getElementById('stopwatch').innerText = '00:00:00';
+        }
+
+        function updateTime() {
+            seconds++;
+            const hrs = Math.floor(seconds / 3600);
+            const mins = Math.floor((seconds % 3600) / 60);
+            const secs = seconds % 60;
+            document.getElementById('stopwatch').innerText =
+                `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+        }
+
+        function updateDuration() {
+            document.getElementById('workout-duration').value = document.getElementById('stopwatch').innerText;
+        }
+
+        function selectWorkout(name) {
+            document.getElementById('workout-name').value = name;
+        }
+
+        function logout() {
+            fetch('Logout', { method: 'POST' })
+                .then(() => {
+                    alert("You have logged out successfully.");
+                    window.location.href = "login.html";
+                });
+        }
+
+        function loadHistory(username) {
+            console.log(`Loading history for ${username}`);
+        }
+    </script>
+</body>
+</html>

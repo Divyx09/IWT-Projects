@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="project.css">
+    <script>
+        // Function to validate the form
+        function validateForm() {
+            var name = document.forms["regisForm"]["u1"].value.trim();
+            var password = document.forms["regisForm"]["u2"].value.trim();
+            var contact = document.forms["regisForm"]["u3"].value.trim();
+            var errorMessage = "";
+
+            // Check if any field is empty
+            if (name == "" || password == "" || contact == "") {
+                errorMessage = "All fields are required and cannot be empty.";
+            }
+
+            // If there is an error, display it and prevent form submission
+            if (errorMessage !== "") {
+                document.getElementById("errorMsg").innerHTML = errorMessage;
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+    </script>
+</head>
+<body>
+    <div id="mymenu">
+        <ul>
+            <li>Home</li>
+            <li><a href="regis.html" class="C">Registration</a></li>
+            <li><a href="login.html" class="C">LogIn</a></li>
+            <li>Contact us</li>
+            <li>About</li>
+        </ul>
+    </div>
+    <div id="mydata">
+        <center>
+            <form name="regisForm" action="Regis" method="post" onsubmit="return validateForm()">
+                <table cellpadding="12">
+                    <caption>REGISTER HERE</caption>
+
+                    <tr>
+                        <td>Enter Name</td>
+                        <td><input type="text" class="A" name="u1" placeholder="Enter Name..." required></td>
+                    </tr>
+
+                    <tr>
+                        <td>Enter Password</td>
+                        <td><input type="password" class="A" name="u2" placeholder="Enter password..." required></td>
+                    </tr>
+
+                    <tr>
+                        <td>Enter C.N.</td>
+                        <td><input type="text" class="A" name="u3" placeholder="Enter C.N...." required></td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="2">
+                            <input type="submit" class="B" value="Register">
+                        </th>
+                    </tr>
+
+                    <!-- Display error message here -->
+                    <tr>
+                        <td colspan="2" id="errorMsg" style="color: red;"></td>
+                    </tr>
+                </table>
+            </form>
+        </center>
+    </div>
+</body>
+</html>
